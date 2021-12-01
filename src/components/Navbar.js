@@ -6,7 +6,7 @@ import { FaPizzaSlice } from "react-icons/fa";
 function Navbar({ toggle }) {
   return (
     <NavbarContainer>
-      <StyledNavLink to="/">Pizza</StyledNavLink>
+      <StyledNavLink to="/">Pizza Hot</StyledNavLink>
       <NavIcon onClick={toggle}>
         <p>Menu</p>
         <Bars />
@@ -26,7 +26,7 @@ const NavbarContainer = styled.nav`
 `;
 const StyledNavLink = styled(NavLink)`
   color: white;
-  font-size: 2rem;
+  font-size: 3rem;
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -46,6 +46,7 @@ const NavIcon = styled.div`
   top: 0;
   p {
     font-weight: bold;
+    font-size: 1.2rem;
     transform: translate(-175%, 100%);
   }
 `;
