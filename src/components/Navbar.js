@@ -1,21 +1,24 @@
 import React from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
+import { FaPizzaSlice } from "react-icons/fa";
 
-function Navbar() {
+function Navbar({ toggle }) {
   return (
-    <>
-      <NavStyled>
-        <StyledNavLink to="/">Pizza</StyledNavLink>
-      </NavStyled>
-    </>
+    <NavbarContainer>
+      <StyledNavLink to="/">Pizza</StyledNavLink>
+      <NavIcon onClick={toggle}>
+        <p>Menu</p>
+        <Bars />
+      </NavIcon>
+    </NavbarContainer>
   );
 }
 
 export default Navbar;
 
-const NavStyled = styled.nav`
-  background: red;
+const NavbarContainer = styled.nav`
+  background: transparent;
   height: 80px;
   display: flex;
   justify-content: center;
@@ -33,4 +36,20 @@ const StyledNavLink = styled(NavLink)`
     top: 10px;
     left: 25px;
   }
+`;
+const NavIcon = styled.div`
+  display: block;
+  color: white;
+  position: absolute;
+  cursor: pointer;
+  right: 0;
+  top: 0;
+  p {
+    font-weight: bold;
+    transform: translate(-175%, 100%);
+  }
+`;
+const Bars = styled(FaPizzaSlice)`
+  transform: translate(-50%, -15%);
+  font-size: 2rem;
 `;
